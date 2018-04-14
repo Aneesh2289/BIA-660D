@@ -14,7 +14,7 @@ import pandas as pd
 
 
 def extract_table_data(html, get_player_url=False):
-    soup = BeautifulSoup(data_html, 'html5lib')
+    soup = BeautifulSoup(data_html, 'lxml')
 
     # get the column names from thead
     column_names = []
@@ -138,7 +138,7 @@ Reg_Season()
 data_div = driver.find_element_by_id('datagrid')
 data_html = data_div.get_attribute('innerHTML')
 df1=extract_table_data(data_html)
-1+1
+
 # df_player_ny_yank = read_data_stats(driver)
 #
 #
