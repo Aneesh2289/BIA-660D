@@ -28,3 +28,12 @@ soup = bs4.BeautifulSoup(requests.get(html).text, 'lxml')
 big_box = soup.find('div', attrs={'class': 'a-expander-content a-expander-partial-collapse-content'})
 print (big_box.prettify())
 
+for br in big_box:
+    print (br.text)
+
+criticalrev = soup.find('div', attrs={'class': 'a-column a-span6 view-point-review critical-review a-span-last'})
+print (criticalrev.prettify())
+
+for br in criticalrev:
+    print (br.text)
+
